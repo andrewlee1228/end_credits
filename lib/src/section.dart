@@ -75,10 +75,27 @@ class _SectionWidgetState extends State<SectionWidget> {
                           for (var person in role.crew)
                             Container(
                               margin: const EdgeInsets.only(bottom: 4),
-                              child: Text(
-                                person.name,
-                                style: widget.responsableStyle,
-                                textAlign: TextAlign.start,
+                              child: Row(
+                                children: <Widget>[
+                                  if (person.imageUrl != null)
+                                    Container(
+                                      width: 32,
+                                      height: 32,
+                                      child: CircleAvatar(
+                                        backgroundImage:
+                                        NetworkImage(person.imageUrl!),
+                                      ),
+                                    ),
+                                  if (person.imageUrl != null)
+                                    SizedBox(
+                                      width: 8,
+                                    ),
+                                  Text(
+                                    person.name,
+                                    style: widget.responsableStyle,
+                                    textAlign: TextAlign.start,
+                                  ),
+                                ],
                               ),
                             )
                         ],
