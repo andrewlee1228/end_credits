@@ -83,7 +83,7 @@ class _SectionWidgetState extends State<SectionWidget> {
                                       height: 32,
                                       child: CircleAvatar(
                                         backgroundImage:
-                                        NetworkImage(person.imageUrl!),
+                                        Image.network(person.imageUrl!, fit: BoxFit.cover).image,
                                       ),
                                     ),
                                   if (person.imageUrl != null)
